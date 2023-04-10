@@ -132,7 +132,7 @@ def leg_right():
     leg.hideturtle()
 
 #abre as palavras e escolhe aleatório
-with open('word.txt') as arquivo:
+with open('Jogo_da_Forca/word.txt') as arquivo:
     #comando que tira o  \n do arquivo externo
     palavras = [linha.strip() for linha in arquivo.readlines()]
 sorteio = random.choice(palavras)
@@ -174,7 +174,6 @@ while True:
                 digitoCertos += 1
         #caso acerte a palavra
         if digitoCertos == len(sorteio):
-            print('certo')
             tkinter.messagebox.showinfo(title=None, message='Parabéns! Você acertou!!')
             break
     #ERRO
@@ -228,7 +227,6 @@ while True:
 
     #caso chegue em ao final das tentativas == 1
         if tentativas == 1:
-            print('Você perdeu o jogo! A palavra era', sorteio)
             tkinter.messagebox.showinfo(title=None, message='Você perdeu! palavra era: ' + str(sorteio))
             break
  
